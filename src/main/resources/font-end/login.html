@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<button onclick="clickMe()">CLickme</button>
+<p id="show"></p>
+</body>
+</html>
+<script>
+    function clickMe(){
+        $.ajax({
+            type: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMiIsImV4cCI6MTY0NDgwMjMzNCwiaWF0IjoxNjQ0NzY2MzM0fQ.ZKGGAJMoYCsJCy-oyjAY3ixZ8tkX2eNF1eZsk0lcXno'
+            },
+            url: "http://localhost:8080/",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+    }
+
+</script>
